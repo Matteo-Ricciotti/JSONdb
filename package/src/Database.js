@@ -29,13 +29,11 @@ class Database extends Base {
 	};
 
 	add = (key, obj) => {
-		const group = this.findKey(key)[1];
+		const group = this.findKey(key);
 
 		if (!obj?._id) throw new Error(`Parameter 'id' is required`);
 
-		group.push(obj);
-
-		this._addToDatabase(key, group);
+		this._addToDatabase(key, obj);
 
 		return this.database[key];
 	};

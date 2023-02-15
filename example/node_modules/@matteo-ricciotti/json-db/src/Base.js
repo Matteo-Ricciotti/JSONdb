@@ -30,10 +30,10 @@ class Base {
 		return JSON.parse(fs.readFileSync(path.join(__dirname, './database.json'), 'utf8'));
 	};
 
-	_addToDatabase = (key, group) => {
+	_addToDatabase = (key, obj) => {
 		const newDatabase = this.database;
 
-		newDatabase[key] = group;
+		newDatabase[key].push(obj);
 
 		fs.writeFileSync(path.join(__dirname, './database.json'), JSON.stringify(newDatabase));
 	};
