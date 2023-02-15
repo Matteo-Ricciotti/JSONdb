@@ -1,3 +1,3 @@
 module.exports = {
-    Database: require('./Database');
+    Database: require('./Database')
 }
